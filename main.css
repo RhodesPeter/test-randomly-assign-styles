@@ -1,0 +1,36 @@
+.description {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 24px;
+}
+
+/* .capital {
+    color: red;
+}
+
+.punctuation {
+    color: blue;
+}
+
+.digit {
+    color: green;
+} */
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: green;
+}
+
+.purple {
+  color: purple;
+}
+
+.pink {
+    color: pink;
+}
