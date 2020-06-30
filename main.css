@@ -14,20 +14,20 @@ button {
 
 @font-face {
     font-family: SS01;
-    src: url(../Typefaces/Airspaceroots-Medium.ttf);
+    src: url(typefaces/Airspaceroots-Medium.ttf);
 }
 
 @font-face {
     font-family: SS02;
-    src: url(../Typefaces/Airspaceslab-Medium.ttf);
+    src: url(typefaces/Airspaceslab-Medium.ttf);
 }
 
 @font-face {
     font-family: SS03;
-    src: url(../Typefaces/Airspacesquare-Medium.ttf);
+    src: url(typefaces/Airspacesquare-Medium.ttf);
 }
   
 @font-face {
     font-family: SS04;
-    src: url(../Typefaces/Airspacewedge-Medium.ttf);
+    src: url(typefaces/Airspacewedge-Medium.ttf);
 }
