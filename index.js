@@ -1,36 +1,23 @@
-const elementToRandomise = document.querySelector('.randomise-typefaces');
-const text = elementToRandomise.textContent;
+(function () {
+  const pickFont = () => ['SS01', 'SS02', 'SS03', 'SS04'][Math.floor(Math.random() * 4)];
+  const elements = document.body.querySelectorAll(
+    'div, p, h1, h2, h3, h4, h5, h6, li, span, button, a'
+  );
 
-// const newText = text
-//     .replace(/[A-Z]/g, '<span class="capital">$&</span>')
-//     .replace(/[.,'|}{\[\]+_\-\)0\(9*8&^%\$£@!]/g, '<span class="punctuation">$&</span>')
-//     .replace(/[0-9]+/g, '<span class="digit">$&</span>');
+  const styleText = (el) => {
+    el.innerHTML = el.textContent
+      .split('')
+      .map((letter) =>
+        letter.match(/[A-Z0-9]|[^A-Za-z0-9 ]/g)
+          ? `<span style="font-family:${pickFont()};">${letter}</span>`
+          : letter
+      )
+      .join('');
+  };
 
-// You might not have to add class names, just apply the style directly to the span in js?
-const randomlyPickClassName = () => {
-    const classNames = ['red', 'blue', 'purple', 'pink'];
-    const randomClassName = classNames[Math.floor(Math.random()*classNames.length)];
-    return randomClassName;
-};
+  elements.forEach(styleText);
+})();
 
-// One downside of this is that a two digit numbers would have different styling
-const newText = text
-    .split('')
-    .map(letter => {
-        if (letter.match(/[A-Z]/g)) {
-            return `<span class="capital ${randomlyPickClassName()}">${letter}</span>`
-        }
 
-        if (letter.match(/[^A-Za-z0-9 ]/)) {
-            return `<span class="punctuation ${randomlyPickClassName()}">${letter}</span>`
-        }
-
-        if (letter.match(/[0-9]/g)) {
-            return `<span class="digit ${randomlyPickClassName()}">${letter}</span>`
-        }
-
-        return letter;
-    })
-    .join('');
-
-elementToRandomise.innerHTML = newText;
+// minified
+// document.body.querySelectorAll("div, p, h1, h2, h3, h4, h5, h6, li, span, button, a").forEach(t=>{t.innerHTML=t.textContent.split("").map(t=>t.match(/[A-Z0-9]|[^A-Za-z0-9 ]/g)?`<span style="font-family:${(()=>["SS01","SS02","SS03","SS04"][Math.floor(4*Math.random())])()};">${t}</span>`:t).join("")});
